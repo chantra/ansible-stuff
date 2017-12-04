@@ -1,0 +1,22 @@
+---
+# Common packages
+
+- name: Install common packages
+  apt: pkg="{{ item }}" state=present force=yes
+  with_items:
+    - curl
+    - wget
+    - gcc
+    - make
+    - vim
+    - git
+    - nmap
+    - tcpdump
+    - mosh
+    - tmux
+
+
+- name: Install Watchman playbook missing dependencies
+  apt: pkg="{{ item }}" state=present force=yes
+  with_items:
+    - libssl-dev

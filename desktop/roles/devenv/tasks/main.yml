@@ -1,0 +1,12 @@
+---
+
+- name: Install npm
+  apt: name=npm state=present
+
+- name: Install nuclide {{ nuclide_version }}
+  npm:
+    global: yes
+    name: nuclide
+    state: present
+    version: "{{ nuclide_version }}"
+
